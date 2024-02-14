@@ -32,20 +32,15 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <section id="contact">
-      <h5>Get In Touch</h5>
-      <h5>
-        I do receive your messages and will respond asap if the valid email is
-        provided :)
-      </h5>
+    <section id="contact">  
       <h2>Contact Me</h2>
       <div className="container contact__container">
         <div className="contact__options">
           <article className="contact__option">
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
-            <h5>rasiftaghizade@gmail.com</h5>
-            <a href="mailto:mekomerikomg@gmail.com">Send a message</a>
+            <h5>sisandaemm@gmail.com</h5>
+            <a href="sisandaemm@gmail.com">Send a message</a>
           </article>
         </div>
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -74,8 +69,8 @@ const Contact = () => {
         </form>
       </div>
       <div className="footer__socials">
-      <a href="https://www.linkedin.com/in/rasif-tagizada/" target="_blank" rel="noreferrer" ><BsLinkedin /></a>
-      <a href="https://github.com/Rasif-Taghizada" target="_blank" rel="noreferrer" ><FaGithub /></a>
+      <a href="" target="_blank" rel="noreferrer" ><BsLinkedin /></a>
+      <a href="https://github.com/SisandaManjanja?tab=repositories" target="_blank" rel="noreferrer" ><FaGithub /></a>
       </div>
     </section>
   );

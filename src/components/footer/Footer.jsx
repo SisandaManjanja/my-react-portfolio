@@ -8,7 +8,7 @@ const Footer = () => {
       
       
       <div className="footer__copyright">
-        <small>&copy; ET 2022. All rights reserved.</small>
+        <small>&copy; SISANDA MANJANJA 2023. All rights reserved.</small>
       </div>
     </footer>
   )
