@@ -28,7 +28,7 @@ const Portfolio = () => {
       description:
         "The COVID Tracking Project collects and publishes the most complete testing data available for all areas of the world.",
       technologies: "PYTHON",
-      link: "https://covid-19-tracker-weld-nu.vercel.app/",
+      link: "",
       github: "https://github.com/Bawrer/5Stars_UnitConverter",
     },
     {

@@ -3,22 +3,23 @@ import { BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 
 import React, { useRef, useState } from 'react';
-
 import { MdOutlineEmail } from 'react-icons/md';
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com'; // Changed import statement
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
   const formRef = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
+
     emailjs
       .sendForm(
-        'service_k2qawqh',
-        'template_c6rkpn6',
-        formRef.current,
-        'X7K7ebhIeOy3YwHki'
+        'service_yppshy5',
+        'template_ea0x43a',
+        e.target,
+        'Vf2O8lXA6nvd8AfMa'
       )
       .then(
         (result) => {
@@ -31,6 +32,7 @@ const Contact = () => {
 
     e.target.reset();
   };
+
   return (
     <section id="contact">  
       <h2>Contact Me</h2>
@@ -51,7 +53,7 @@ const Contact = () => {
             required
           />
           <input
-            type="text"
+            type="email" // Changed input type to "email"
             placeholder="Your Email"
             name="user_email"
             required
@@ -69,8 +71,16 @@ const Contact = () => {
         </form>
       </div>
       <div className="footer__socials">
-      <a href="" target="_blank" rel="noreferrer" ><BsLinkedin /></a>
-      <a href="https://github.com/SisandaManjanja?tab=repositories" target="_blank" rel="noreferrer" ><FaGithub /></a>
+        <a href="" target="_blank" rel="noreferrer">
+          <BsLinkedin />
+        </a>
+        <a
+          href="https://github.com/SisandaManjanja?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaGithub />
+        </a>
       </div>
     </section>
   );
