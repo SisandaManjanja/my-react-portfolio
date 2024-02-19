@@ -4,19 +4,18 @@ import { FaAward } from "react-icons/fa";
 import React from "react";
 import { VscFolderLibrary } from "react-icons/vsc";
 import img from '../../assets/Me.png'
+import CV from '../../assets/docs/Sisanda_Manjanja_CV.pdf';
 
-// import ME from '../../assets/Rasif Tagizade image.jpg';
 
 
 const Intro = () => {
   return (
     <section id="about">
-      <h5>Get to know</h5>
       <h2>About Me</h2>
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={img} alt="Rasif Taghizade" />
+            <img src={img} alt="Sisanda Manjanja" />
           </div>
         </div>
         <div className="about__content">
@@ -36,12 +35,15 @@ const Intro = () => {
           contribute to impactful projects and bring value to a forward-thinking
           organization.
           </p>
-          <a href="#contact" className="btn btn-primary">
-            Download CV
-          </a>
-          <a href="#contact" className="btn btn-primary">
-            hire
-          </a>
+          <div class="custom-buttons-container">
+          <a href={CV} download className="custom-button">
+    Download CV
+  </a>
+  <a href="#contact" class="custom-button">
+    Hire Me
+  </a>
+</div>
+          
         </div>
       </div>
     </section>

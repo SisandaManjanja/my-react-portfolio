@@ -61,7 +61,7 @@
 
 .about__content p {
     margin: 2rem 0 2.6rem;
-    color: var(--color-light);
+    color: black;
 }
 
 @media screen and (max-width: 1024px){
@@ -99,3 +99,17 @@
         margin: 1.5rem 0;
     }
 }
+.custom-buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .custom-button {
+    background-color: #FA0AE2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+  }

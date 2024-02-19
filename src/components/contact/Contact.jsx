@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 
 import React, { useRef, useState } from 'react';
 import { MdOutlineEmail } from 'react-icons/md';
-import emailjs from 'emailjs-com'; // Changed import statement
+import emailjs from 'emailjs-com'; 
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
@@ -53,7 +53,7 @@ const Contact = () => {
             required
           />
           <input
-            type="email" // Changed input type to "email"
+            type="email" 
             placeholder="Your Email"
             name="user_email"
             required
