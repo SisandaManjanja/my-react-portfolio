@@ -1,6 +1,7 @@
 import './contact.css';
 import { BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import React, { useRef, useState } from 'react';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -32,7 +33,7 @@ const Contact = () => {
 
     e.target.reset();
   };
-
+  const onChange = () => {};
   return (
     <section id="contact">  
       <h2>Contact Me</h2>
@@ -64,10 +65,14 @@ const Contact = () => {
             name="message"
             required
           ></textarea>
+          <ReCAPTCHA
+    sitekey="6LfiWnkpAAAAAFGXCxW5RchCwvc7BeqbC2Ep_7sR"
+    onChange={onChange}
+  />
           <button type="submit" className="btn btn-primary">
             Send Message
           </button>
-          {message && <span>Thanks, I'll reply ASAP :)</span>}
+          {message && <span>Thanks, I'll reply ASAP 👍</span>}
         </form>
       </div>
       <div className="footer__socials">
@@ -83,6 +88,7 @@ const Contact = () => {
         </a>
       </div>
     </section>
+    
   );
 };
 
