@@ -9,31 +9,41 @@ import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
   const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage(true);
+    
+    if (isVerified) {
+      setMessage(true);
 
-    emailjs
-      .sendForm(
-        'service_yppshy5',
-        'template_ea0x43a',
-        e.target,
-        'Vf2O8lXA6nvd8AfMa'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      emailjs
+        .sendForm(
+          'service_yppshy5',
+          'template_ea0x43a',
+          e.target,
+          'Vf2O8lXA6nvd8AfMa'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
 
-    e.target.reset();
+      e.target.reset();
+    } else {
+      alert("Please verify the reCAPTCHA before sending the message.");
+    }
   };
-  const onChange = () => {};
+
+  const onChange = () => {
+    setIsVerified(true);
+  };
+
   return (
     <section id="contact">  
       <h2>Contact Me</h2>
@@ -43,7 +53,7 @@ const Contact = () => {
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>sisandaemm@gmail.com</h5>
-            <a href="sisandaemm@gmail.com">Send a message</a>
+            <a href="mailto:sisandaemm@gmail.com">Send a message</a>
           </article>
         </div>
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -66,10 +76,14 @@ const Contact = () => {
             required
           ></textarea>
           <ReCAPTCHA
-    sitekey="6LfiWnkpAAAAAFGXCxW5RchCwvc7BeqbC2Ep_7sR"
-    onChange={onChange}
-  />
-          <button type="submit" className="btn btn-primary">
+            sitekey="6LfiWnkpAAAAAFGXCxW5RchCwvc7BeqbC2Ep_7sR"
+            onChange={onChange}
+          />
+          <button 
+            type="submit" 
+            className="btn btn-primary" 
+            disabled={!isVerified} // Disable button if reCAPTCHA is not verified
+          >
             Send Message
           </button>
           {message && <span>Thanks, I'll reply ASAP 👍</span>}
@@ -88,8 +102,8 @@ const Contact = () => {
         </a>
       </div>
     </section>
-    
   );
 };
 
 export default Contact;
+

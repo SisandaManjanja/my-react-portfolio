@@ -2,6 +2,7 @@ header {
   height: 100%;
   padding-top: 7rem;
   overflow: hidden;
+  margin-top: -120px;
   
 }
 
@@ -64,3 +65,19 @@ header {
     display: none;
   }
 }
+.cta{
+  display: flex;
+  justify-content: space-between;
+  background-color: #FA0AE2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  align-content: center;
+  width :100px;
+  margin-left: 450px;
+  
+}
+
